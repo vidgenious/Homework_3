@@ -1,3 +1,11 @@
+// Author: Maxwell McAtee
+// Updated: 2/15/2021
+// Functionality of page for ordering Cheesecake
+// Some clicking functionality.
+// JavaScript file for homework three of Software Engineering.
+// Professor: Nuxoll
+
+
 //Function for the Order button
 $(document).ready(function(){
 $("#button").click(function(){
