@@ -1,0 +1,57 @@
+/*
+Author:Maxwell McAtee
+Updated:2/8/2021
+This changes two background colors and two fonts.
+Adds CSS for a hover dropdown menu.
+CSS file for homework two of Software Engineering.
+Professor: Nuxoll
+*/
+
+/*
+References for dropdown
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
+https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text
+*/
+
+/*background for the page*/
+body{
+  background-color: #6d1a1c;
+}
+
+/*Header one font*/
+h1{
+  width: 21%;
+  background-color: #dcde61;
+  font-family: Hand, cursive;
+}
+
+/*Paragraph font*/
+p{
+  font-family: impact, fantasy;
+}
+/*Dropdown information*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/*specifications for the dropdown options
+  Problem: needed to make dropdown list scrollable
+  Solution: (max-height;) and (overflow: auto;)
+  Solution link: https://stackoverflow.com/questions/21983819/making-a-drop-down-menu-scrollable
+*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  max-height: 70px;
+  overflow: auto;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 5px 5px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
