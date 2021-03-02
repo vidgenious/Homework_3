@@ -1,5 +1,5 @@
 // Author: Maxwell McAtee
-// Updated: 2/15/2021
+// Updated: 3/1/2021
 // Functionality of page for ordering Cheesecake
 // Some clicking functionality.
 // JavaScript file for homework three of Software Engineering.
@@ -33,11 +33,27 @@ $("#button").click(function(){
 //function for when dropdown choice is clicked
 $(document).ready(function(){
 $(".dropDownChoice").click(function(){
-
   //Problem: Needed to get the specific month that was clicked
   //         and not all that were in the class
   //Solution: Use (this)
   //Solution link: https://stackoverflow.com/questions/16091823/get-clicked-element-using-jquery-on-event
   $("#selectedMonth").text($(this).text());
+
+  //post call for the changing of month info section
+  $.post("/orders", {}, function(data){
+    for(var i=0; i<3; i++){
+      var ID = "topping" + i;
+
+      var quantity = data[i].quantity;
+      var topping = data[i].topping;
+
+      converted = JSON.stringify(quantity + " " + topping);
+
+      parse = JSON.parse(converted);
+
+      document.getElementById(ID).innerHTML = parse;
+    }
+  });
+
 })
 })
